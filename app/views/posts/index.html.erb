@@ -1,0 +1,7 @@
+<h1>Click a Post To Comment</h1>
+<%= link_to 'Create a new post', new_user_post_path(@user) %>
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.name, [@user, post] %></li>
+  <% end %>
+</ul>
