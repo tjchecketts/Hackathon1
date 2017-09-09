@@ -7,10 +7,16 @@
 <h3>Here's your Bio:</h3>
 <h3> <%= current_user.bio %> </h3>
 
-<%# <h3>All Posts: </h3>
-<%= Posts.all %>
-
 <%= button_to 'New Post', new_user_post_path(@user.id), method: :get %>
+
+
+<h3>All posts: </h3>
+
+<% @user.posts.each do |post| %>
+  <div><%= post.content %></div>
+<% end %>
+
+<%# display user's first name with every post %>
 
 <%# be able to create your own new post %>
 

@@ -4,7 +4,10 @@
   <%= f.label :content %>
   <%= f.text_field :content, required: true, autofocus: true %>
   <br />
+
+  <%# future thought - add current_user first_name to every post%>
+
   <%# <%= f.label :body %> 
   <%# <%= f.text_area :body, required: true %> 
-  <%# <%= f.submit %> 
+  <%= f.submit %>
 <% end %>

@@ -19,10 +19,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = @user.posts.new
+    @post = @user.posts.new(post_params)
 
     if @post.save
-      redirect_to [@user, @post]
+      redirect_to :root
     else
       render :new
     end
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to [@user, @post]
+      redirect_to :root
     else
       render :edit
     end
@@ -51,6 +51,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:name, :body)
+      params.require(:post).permit(:content)
     end
 end
