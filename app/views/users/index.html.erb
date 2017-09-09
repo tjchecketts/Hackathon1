@@ -7,14 +7,19 @@
 <h3>Here's your Bio:</h3>
 <h3> <%= current_user.bio %> </h3>
 
-<%= button_to 'New Post', new_user_post_path(@user.id), method: :get %>
-
+<hr>
 
 <h3>All posts: </h3>
 
+<%= button_to 'New Post', new_user_post_path(@user.id), method: :get %>
+<br>
 <% @user.posts.each do |post| %>
   <div><%= post.content %></div>
 <% end %>
+
+
+<%# <%= link_to 'Edit Post', edit_user_post_path([@user, @post]) %>
+<%# <%= link_to 'Delete Post', [@user, @post], method: :delete %>
 
 <%# display user's first name with every post %>
 
