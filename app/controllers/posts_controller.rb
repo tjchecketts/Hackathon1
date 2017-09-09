@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = @user.posts.new(post_params)
+    @post = @user.posts.new
 
     if @post.save
       redirect_to [@user, @post]
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
 
   private
     def set_user
-      @user = User.find(params[:user_id])
+      @user = current_user
     end
 
     def set_post

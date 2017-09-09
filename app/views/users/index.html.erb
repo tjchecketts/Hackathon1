@@ -10,7 +10,7 @@
 <%# <h3>All Posts: </h3>
 <%= Posts.all %>
 
-<%= button_to 'New Post', new_account_post_path([:id]), method: :get %>
+<%= button_to 'New Post', new_user_post_path(@user.id), method: :get %>
 
 <%# be able to create your own new post %>
 
